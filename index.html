@@ -17,14 +17,23 @@
             <form>
                 <h2>Insira sua data de nascimento</h2>
 
-                <label for="bday">Dia: </label>
-                <input type="number" name="bday" id="bday" placeholder="DD">
+                <div id="day">
+                    <label for="bday">Dia: </label>
+                    <input type="number" name="bday" id="bday" placeholder="DD" value="30">
+                    <span class="errormsg"></span>                    
+                </div>
 
-                <label for="bmonth">Mês: </label>
-                <input type="number" name="bmonth" id="bmonth" placeholder="MM">
+                <div id="month">
+                    <label for="bmonth">Mês: </label>
+                    <input type="number" name="bmonth" id="bmonth" placeholder="MM" value="2">
+                    <span class="errormsg"></span>
+                </div>
 
-                <label for="byear">Ano: </label>
-                <input type="number" name="byear" id="byear" placeholder="AAAA">
+                <div id="year">
+                    <label for="byear">Ano: </label>
+                    <input type="number" name="byear" id="byear" placeholder="AAAA" value="2008">
+                    <span class="errormsg"></span>
+                </div>
 
                 <input type="button" value="Calcular" onclick="calcAge()">
             </form>

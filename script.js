@@ -16,6 +16,10 @@ function calcAge() {
     var bmonthtxt = document.getElementById('bmonth');
     var byeartxt = document.getElementById('byear');
 
+    var daydiv = document.getElementById('day');
+    var monthdiv = document.getElementById('month');
+    var yeardiv = document.getElementById('year');
+
     if (bdaytxt.value.length == 0 || bmonthtxt.value.length == 0 || byeartxt.value.length == 0) {
         window.alert('Por favor, preencha todos os campos');
     } else {
@@ -30,35 +34,30 @@ function calcAge() {
         }
 
         if (bday < 1 || bday > 31) {
-            //window.alert('Insira um dia válido');
             invday = true;
+            showError(daydiv, 'Dia inválido');
         }
 
         if (bmonth < 1 || bmonth > 12) {
-            //window.alert('Insira um mês válido');
             invmonth = true;
+            showError(monthdiv, 'Mês inválido');
         } else if (bday > months[bmonth-1]) {
-            //window.alert('O dia inserido não existe');
             invday = true;
+            showError(daydiv, 'Dia inválido');
         }
 
-        if (byear < 0 || byear > curryear) {
+        if (byear < 0) {
             invyear = true;
+            showError(yeardiv, 'Ano inválido');
         }
         
-        if ((byear == curryear) && (bday > currday || bmonth > currmonth)){
-            //window.alert('A data inserida está no futuro');
+        if ((byear == curryear) && (bday > currday || bmonth > currmonth) || (byear > curryear)){
             invyear = true;
+            showError(yeardiv, 'Precisa estar no passado');
         }
-        
-        //Mensagem de erro
-        showError(invday, bdaytxt);
-        showError(invmonth, bmonthtxt);
-        showError(invyear, byeartxt)
             
         //Checando se todos são válidos
         if (invday == false && invmonth == false && invyear == false) {
-
             var age = {
                 days: undefined,
                 months: undefined,
@@ -68,6 +67,7 @@ function calcAge() {
             
             let prevmonth = currmonth-1;
             
+            //Calculando a idade
             if (prevmonth < 0) {
                 prevmonth = 12;
             }
@@ -94,10 +94,10 @@ function calcAge() {
     }
 }
 
-function showError(invalid, elem) {
-    if (invalid) {
-        elem.style.backgroundColor = 'red';
-    } else { 
-        elem.style.backgroundColor = 'white'; 
-    }
+function showError(elem, msg) { //----------------------------A FAZER: MANEIRA DE VOLTAR AO NORMAL APÓS UM INPUT INVÁLIDO
+    elem.querySelector('input').style.backgroundColor = 'red';
+    errormsg = elem.querySelector('.errormsg');
+    errormsg.innerHTML = msg;
+    elem.appendChild(errormsg);
 }
+
