@@ -13,22 +13,29 @@
             <h1>Calculadora de Idade</h1>
         </header>
 
-        <main>
+        <section>
             <form>
                 <h2>Insira sua data de nascimento</h2>
 
                 <label for="bday">Dia: </label>
-                <input type="number" name="bday" id="bday">
+                <input type="number" name="bday" id="bday" placeholder="DD">
 
                 <label for="bmonth">Mês: </label>
-                <input type="number" name="bmonth" id="bmonth">
+                <input type="number" name="bmonth" id="bmonth" placeholder="MM">
 
                 <label for="byear">Ano: </label>
-                <input type="number" name="byear" id="byear">
+                <input type="number" name="byear" id="byear" placeholder="AAAA">
 
                 <input type="button" value="Calcular" onclick="calcAge()">
             </form>
-        </main>
+        </section>
+
+        <div id="res">
+            <p><strong id="rday">--</strong> Dias</p>
+            <p><strong id="rmonth">--</strong> Meses</p>
+            <p><strong id="ryear">--</strong> Anos</p>
+        </div>
+
         <script src="script.js"></script>
     </body>
 </html>
