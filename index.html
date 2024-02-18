@@ -3,10 +3,32 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="stylesheet" href="style.css">
         <title>Calculadora de Idade</title>
     </head>
+
     <body>
-        
+        <header>
+            <h1>Calculadora de Idade</h1>
+        </header>
+
+        <main>
+            <form>
+                <h2>Insira sua data de nascimento</h2>
+
+                <label for="bday">Dia: </label>
+                <input type="number" name="bday" id="bday">
+
+                <label for="bmonth">Mês: </label>
+                <input type="number" name="bmonth" id="bmonth">
+
+                <label for="byear">Ano: </label>
+                <input type="number" name="byear" id="byear">
+
+                <input type="button" value="Calcular" onclick="calcAge()">
+            </form>
+        </main>
+        <script src="script.js"></script>
     </body>
 </html>
