@@ -1,14 +1,14 @@
 //document.querySelector('button').addEventListener('click', calcAge);
 
 function calcAge() {
-    //Descobrindo a data atual
+    //#region Data
     var currtime = new Date();
     var currday = currtime.getDate();
     var currmonth = currtime.getMonth();
     var curryear = currtime.getFullYear();
     var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    //#endregion
 
-    //Validando os inputs
     var invday = false;
     var invmonth = false;
     var invyear = false;
@@ -22,6 +22,7 @@ function calcAge() {
     var yeardiv = document.getElementById('year');
     var datedivs = [daydiv, monthdiv, yeardiv];
 
+    //Validando os inputs
     if (bdaytxt.value.length == 0 || bmonthtxt.value.length == 0 || byeartxt.value.length == 0) {
         window.alert('Por favor, preencha todos os campos');
     } else {
@@ -35,6 +36,7 @@ function calcAge() {
             months[1] = 29;
         }
 
+        //Condições inválidas
         if (bday < 1 || bday > 31) {
             invday = true;
             showError(daydiv, 'Dia inválido');
@@ -92,6 +94,7 @@ function calcAge() {
             } 
             age.months = currmonth - bmonth;
 
+            //Atualizando o texto da página
             var rday = document.getElementById('rday');
             rday.innerText = age.days;
             var rmonth = document.getElementById('rmonth');
