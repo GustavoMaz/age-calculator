@@ -4,7 +4,6 @@ function calcAge() {
     var currday = currtime.getDate();
     var currmonth = currtime.getMonth();
     var curryear = currtime.getFullYear();
-    //var months31days = [1, 3, 5, 7, 8, 10, 12];
     var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
     //Validando os inputs
@@ -19,6 +18,7 @@ function calcAge() {
     var daydiv = document.getElementById('day');
     var monthdiv = document.getElementById('month');
     var yeardiv = document.getElementById('year');
+    var datedivs = [daydiv, monthdiv, yeardiv];
 
     if (bdaytxt.value.length == 0 || bmonthtxt.value.length == 0 || byeartxt.value.length == 0) {
         window.alert('Por favor, preencha todos os campos');
@@ -58,6 +58,13 @@ function calcAge() {
             
         //Checando se todos são válidos
         if (invday == false && invmonth == false && invyear == false) {
+
+            var errormsg = document.getElementsByClassName('errormsg');
+            for (i in datedivs) {
+                datedivs[i].className = 'valid'
+                errormsg[i].innerHTML = '';
+            }
+
             var age = {
                 days: undefined,
                 months: undefined,
@@ -83,21 +90,18 @@ function calcAge() {
             } 
             age.months = currmonth - bmonth;
 
+            var rday = document.getElementById('rday');
+            rday.innerText = age.days;
+            var rmonth = document.getElementById('rmonth');
+            rmonth.innerText = age.months;
+            var ryear = document.getElementById('ryear');
+            ryear.innerText = age.years;
         }
-
-        var rday = document.getElementById('rday');
-        rday.innerText = age.days;
-        var rmonth = document.getElementById('rmonth');
-        rmonth.innerText = age.months;
-        var ryear = document.getElementById('ryear');
-        ryear.innerText = age.years;
     }
 }
 
-function showError(elem, msg) { //----------------------------A FAZER: MANEIRA DE VOLTAR AO NORMAL APÓS UM INPUT INVÁLIDO
-    elem.querySelector('input').style.backgroundColor = 'red';
-    errormsg = elem.querySelector('.errormsg');
-    errormsg.innerHTML = msg;
-    elem.appendChild(errormsg);
+function showError(elem, msg) {
+    elem.className = 'invalid';
+    elem.querySelector('.errormsg').innerHTML = msg;
 }
 
