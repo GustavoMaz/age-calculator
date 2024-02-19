@@ -15,10 +15,10 @@
             </header>
 
             <div id="container">
-                <section>
-                    <form>
-                        <h2>Insira sua data de nascimento</h2>
-                        
+                <form>
+                    <h2>Insira sua data de nascimento</h2>
+                    
+                    <div id="input-container">
                         <div class="valid" id="day">
                             <label for="bday">Dia: </label>
                             <input type="number" name="bday" id="bday" placeholder="DD" value="30">
@@ -36,15 +36,21 @@
                             <input type="number" name="byear" id="byear" placeholder="AAAA" value="2008">
                             <span class="errormsg"></span>
                         </div>
-                        
-                        <input type="button" value="Calcular" onclick="calcAge()">
-                    </form>
-                </section>
-                
+                    </div>
+                    
+                    <button onclick="calcAge()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                        </svg>
+                    </button>
+                </form>
+            
                 <div id="res">
-                    <p><strong id="rday">--</strong> Dias</p>
-                    <p><strong id="rmonth">--</strong> Meses</p>
-                    <p><strong id="ryear">--</strong> Anos</p>
+                    <div>
+                        <p><strong id="rday">--</strong> Dias</p>
+                        <p><strong id="rmonth">--</strong> Meses</p>
+                        <p><strong id="ryear">--</strong> Anos</p>
+                    </div>
                 </div>
             </div>
         </div>

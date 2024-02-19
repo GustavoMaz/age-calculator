@@ -4,15 +4,26 @@
 /*Roboto*/
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-* { margin: 0; padding: 0; }
+:root {
+    --color-dark: #1f1f1f;
+    --color-light: #dfdfdf;
+    --color-light-gray: #888888;
+    --color-accent: #40E65F;
+    --color-red: #E53856;
+}
+
+html {
+    font-size: 16px;
+}
 
 body, html, #bg {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Roboto', sans-serif;
     height: 100%;
+    margin: 0;
 }
 
 #bg { 
-    background-color: rgb(240, 240, 240);
+    background-color: var(--color-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,12 +33,79 @@ body, html, #bg {
 
 #container { 
     background-color: white;
+    padding: 2rem;
+    border-radius: 3rem 3rem 8rem 3rem;
+    width: fit-content;
 }
 
-
+#input-container {
+    width: 388px;
+}
 
 h1, h2 {
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 0;
+}
+
+form {
+    margin-bottom: 2rem;
+}
+
+form div#input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+label {
+    display: block;
+    color: var(--color-light-gray);
+}
+
+input {
+    width: 2.5rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--color-light);
+    border-radius: 1rem;
+}
+
+input#byear { width: 4rem; }
+
+input[type='button'] {
+    margin-left: 32rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    background-color: var(--color-accent);
+}
+
+svg {
+    color: white;
+}
+
+/* Remover as setas do input de números */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+div#res {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#res p {
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--color-dark);
+    margin: 0;
+    font-style: italic;
+}
+
+strong {
+    color: var(--color-accent);
 }
 
 div {
