@@ -42,6 +42,11 @@ body, html, #bg {
     width: 400px;
 }
 
+h1 {
+    font-weight: 900;
+    font-style: italic;
+}
+
 h1, h2 {
     text-align: center;
     margin-top: 0;
@@ -67,6 +72,7 @@ label {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    max-width: 114px;
 }
 
 input {
@@ -92,22 +98,24 @@ input {
     color: var(--color-red);
     font-style: italic;
     margin-top: 0.25rem;
+    white-space: nowrap;
 }
 
 #btn-container {
     display: flex;
     align-items: center;
+    width: 32rem;
 }
 
 #line {
     height: 2px;
-    width: 32rem;
+    width: 100%;
     background-color: var(--color-light);
 }
 
 button, input[type='button'] {
-    width: 4rem;
-    height: 4rem;
+    width: 64px;
+    height: 64px;
     border-radius: 100%;
     border: 0px;
     background-color: var(--color-accent);
@@ -138,4 +146,19 @@ div#res {
 
 strong {
     color: var(--color-accent);
+}
+
+@media only screen and (max-width: 660px){
+    #container {
+        width: 85%;
+    }
+
+    #btn-container {
+        width: 100%;
+    }
+
+    #res p{
+        font-weight: 700; 
+        font-size: 5rem;
+    }
 }
