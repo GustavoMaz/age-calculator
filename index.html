@@ -19,30 +19,29 @@
                     <h2>Insira sua data de nascimento</h2>
                     
                     <div id="input-container">
-                        <div class="valid" id="day">
+                        <div class="valid date-input" id="day">
                             <label for="bday">Dia: </label>
-                            <input type="number" name="bday" id="bday" placeholder="DD" value="30">
+                            <input type="number" name="bday" id="bday" placeholder="DD">
                             <span class="errormsg"></span>                    
                         </div>
                         
-                        <div class="valid" id="month">
+                        <div class="valid date-input" id="month">
                             <label for="bmonth">Mês: </label>
-                            <input type="number" name="bmonth" id="bmonth" placeholder="MM" value="2">
+                            <input type="number" name="bmonth" id="bmonth" placeholder="MM">
                             <span class="errormsg"></span>
                         </div>
                         
-                        <div class="valid" id="year">
+                        <div class="valid date-input" id="year">
                             <label for="byear">Ano: </label>
-                            <input type="number" name="byear" id="byear" placeholder="AAAA" value="2008">
+                            <input type="number" name="byear" id="byear" placeholder="AAAA">
                             <span class="errormsg"></span>
                         </div>
                     </div>
-                    
-                    <button onclick="calcAge()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
-                        </svg>
-                    </button>
+
+                    <div id="btn-container">
+                        <div id="line"></div>
+                        <input type="button" value="" onclick="calcAge()">
+                    </div>
                 </form>
             
                 <div id="res">

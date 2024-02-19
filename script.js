@@ -1,3 +1,5 @@
+//document.querySelector('button').addEventListener('click', calcAge);
+
 function calcAge() {
     //Descobrindo a data atual
     var currtime = new Date();
@@ -61,7 +63,7 @@ function calcAge() {
 
             var errormsg = document.getElementsByClassName('errormsg');
             for (i in datedivs) {
-                datedivs[i].className = 'valid'
+                datedivs[i].className = 'valid date-input'
                 errormsg[i].innerHTML = '';
             }
 
@@ -101,7 +103,7 @@ function calcAge() {
 }
 
 function showError(elem, msg) {
-    elem.className = 'invalid';
+    elem.className = 'invalid date-input';
     elem.querySelector('.errormsg').innerHTML = msg;
 }
 
